@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8fb7076-9be1-4baa-b22c-9d57ffb8f7c1" name="Default Changelist" comment="" />
+    <list default="true" id="13aaa3c6-2407-4b1a-9e5c-0a3edf84cd00" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,20 +14,21 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-ICT133" />
-  <component name="ProjectId" id="1Tn9YEtSNJPeWkcGDUgtyOiSczg" />
+  <component name="ProjectId" id="1U6IRxrfXyIRRyFItqpVI8xmvSM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ICT-133_PHP_Arrays_Strings" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,7 +43,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8080">
+    <configuration name="Dates_Fardel" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8083">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8083">
       <method v="2" />
     </configuration>
   </component>
@@ -51,12 +55,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8fb7076-9be1-4baa-b22c-9d57ffb8f7c1" name="Default Changelist" comment="" />
-      <created>1574085037914</created>
+      <changelist id="13aaa3c6-2407-4b1a-9e5c-0a3edf84cd00" name="Default Changelist" comment="" />
+      <created>1574670613182</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574085037914</updated>
-      <workItem from="1574085039059" duration="3000000" />
+      <updated>1574670613182</updated>
+      <workItem from="1574670614343" duration="877000" />
+      <workItem from="1574687521855" duration="3616000" />
+      <workItem from="1575275543051" duration="435000" />
+      <workItem from="1575900196545" duration="229000" />
     </task>
     <servers />
   </component>
@@ -68,7 +75,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
