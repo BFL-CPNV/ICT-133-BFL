@@ -1,4 +1,14 @@
-﻿<!DOCTYPE HTML>
+﻿<?php
+/**
+ * Snow - gabarit.php
+ *
+ * Initial version by: Bastien.Fardel
+ * Initial version created on: 16.12.2019 14:00:14
+ * Current version: 2.0
+ * Description: Acts as the overall display of the site, showing content depending on what the view calls.
+ */
+?>
+<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -80,7 +90,10 @@
                                     class="active"
                                 <?php endif ?>>
                                     <a href="index.php?action=login">Login</a></li>
-                                <li><a href="index.php?action=produits">Produits</a></li>
+                                <li <?php if ($_GET['action'] == "products"): ?>
+                                    class="active"
+                                <?php endif ?>>
+                                    <a href="index.php?action=products">Produits</a></li>
                             </ul>
                         </div>
                     </div>

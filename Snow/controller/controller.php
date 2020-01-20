@@ -4,8 +4,8 @@
  *
  * Initial version by: Bastien.Fardel
  * Initial version created on: 16.12.2019 14:42
- * Current version: 2.0
- * Description: Contains functions to use in order to call the appropriate group suchs as view or model.
+ * Current version: 3.0
+ * Description: Acts as the Controller and contains functions to use in order to call the appropriate group suchs as view or model.
  */
 session_start();
 
@@ -26,24 +26,35 @@ function home()
  */
 function login()
 {
-    $_GET['action'] = "login";
     if (checkLogin()) {
         if (isset($_POST['Username'])) {
+            $_GET['action'] = "home";
             $_SESSION['User'] = $_POST['Username'];
-            require "view/login.php";
+            require "view/home.php";
             $_SESSION['TF'] = 0;
         }
     } else {
+        $_GET['action'] = "login";
         require "view/login.php";
     }
 }
 
+/**
+ * Function to redirect the user to the products page
+ */
+function products(){
+    $_GET['action'] = "products";
+    require "view/products.php";
+}
 
+/**
+ * Function shows error message if password's incorrect
+ */
 function wrongPassword()
 {
     if (isset($_SESSION['TF'])) {
         if ($_SESSION['TF'] == 1) {
-            echo "<p class='error'>Le mot de passe est incorrect.</p>";
+            echo "<p class='incorrect'>Erreur de mot de passe</p>";
             $_SESSION['TF'] = 0;
         }
     }

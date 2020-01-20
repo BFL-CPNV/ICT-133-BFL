@@ -5,7 +5,7 @@
  * Initial version by: Bastien.FARDEL
  * Initial version created on: 06.01.2020 09:20
  * Current version: 1.0
- * Description:
+ * Description: The Login Page, sends its content to gabarit.php.
  */
 
 // Flow Stamp stocked in memory
@@ -17,8 +17,13 @@ $titre = "Rent A Snow - Login";
     .subtitle {
         font-weight: bold;
         font-size: 20px;
+        color: rgb(218, 93, 0);
     }
 
+    .incorrect {
+        font-weight: bold;
+        color: red;
+    }
 
 </style>
 

@@ -4,8 +4,8 @@
  *
  * Initial version by: Bastien.Fardel
  * Initial version created on: 13.01.2020 14:05
- * Current version: 1.0
- * Description:
+ * Current version: 2.0
+ * Description: Acts as the model, communicates with databases.
  */
 
 /**
@@ -21,11 +21,60 @@ function checkLogin()
         } else {
             if ($Input === "") {
                 return false;
-            }
-            else {
+            } else {
                 $_SESSION['TF'] = 1;
                 return false;
             }
         }
+    }
+}
+
+/**
+ * Function welcomes connected user with adapted greeting form or displays
+ * the standard welcome if not connected to avoid errors
+ */
+function welcomeUser()
+{
+    if (isset($_POST['Username'])) {
+        if (date('G') >= 7 && date('G') < 14) {
+            echo "Bonjour " . $_POST['Username'];
+        }
+
+        if (date('G') >= 14 && date('G') < 19) {
+            echo "Bon après-midi " . $_POST['Username'];
+        }
+
+        if (date('G') >= 19 && date('G') < 23) {
+            echo "Bonsoir " . $_POST['Username'];
+        }
+
+        if (date('G') < 7 && date('G') >= 23) {
+            echo "Bonne nuit " . $_POST['Username'];
+        }
+    } else {
+        echo "Bienvenue sur Rent A Snow !";
+    }
+}
+
+/**
+ * Function reads from json file to create content to show on page
+ */
+function productsRead()
+{
+    //Gets the contents of the JSON file
+    $productsJsonContents = file_get_contents("view/content/json/products.json");
+    // Convert to array
+    $productsArray = json_decode($productsJsonContents, true);
+
+    echo '<table width="100%">';
+    foreach ($productsArray as $row) {
+        echo '<div class="product">' .
+            '<h1>Item # : ' . $row["tag"] . '</h1>' .
+            '<p class="price">Price : ' . $row["price"] . '</p>' .
+            '<p>Brand : ' . $row["brand"] . '</p>' .
+            '<p>Model : ' . $row["model"] . '</p>' .
+            '<p>Class : ' . $row["class"] . '</p>' .
+            '<p>Stock : ' . $row["stock"] . '</p>' .
+            '<p><button>Add to Cart</button></p></div>';
     }
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "tag": "SCP-173",
+    "brand": "UnknownInc",
+    "model": "Concrete",
+    "class": "Large",
+    "price": "173.-/jour",
+    "stock": "1"
+  },
+  {
+    "tag": "420-J",
+    "brand": "GUDSTUFF",
+    "model": "Stoned",
+    "class": "XXL",
+    "price": "420.-/jour",
+    "stock": "5"
+  },
+  {
+    "tag": "B100",
+    "brand": "FamilyInc",
+    "model": "Iced",
+    "class": "Small",
+    "price": "25.-/jour",
+    "stock": "1"
+  },
+  {
+    "tag": "K92",
+    "brand": "K9-Tech",
+    "model": "Hunter",
+    "class": "Medium",
+    "price": "29.-/jour",
+    "stock": "20"
+  },
+  {
+    "tag": "N100",
+    "brand": "Niedecker",
+    "model": "Tracer",
+    "class": "Medium",
+    "price": "39.-/jour",
+    "stock": "1"
+  },
+  {
+    "tag": "N754",
+    "brand": "Niedecker",
+    "model": "Ultralight",
+    "class": "Large",
+    "price": "59.-/jour",
+    "stock": "5"
+  }
+]
