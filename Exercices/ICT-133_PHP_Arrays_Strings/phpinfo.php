@@ -3,7 +3,7 @@
 
  Initial version by: Bastien.Fardel
  Initial version created on: 02.12.2019 13:44
- Current version: 2.1
+ Current version: 2.5
  Description: Affiche un calendrier
 -->
 <head>
