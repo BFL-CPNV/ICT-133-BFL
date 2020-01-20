@@ -21,7 +21,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Exercices/ICT-133_PHP_Arrays_Strings/phpinfo.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,6 +72,7 @@
       <workItem from="1578900785768" duration="4103000" />
       <workItem from="1578920402079" duration="5566000" />
       <workItem from="1579506146315" duration="236000" />
+      <workItem from="1579508578729" duration="841000" />
     </task>
     <servers />
   </component>

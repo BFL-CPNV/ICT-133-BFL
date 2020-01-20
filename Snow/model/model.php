@@ -11,15 +11,21 @@
 /**
  * Checks the login provided from login.php by the user and return a true or false statement.
  */
-function checkLogin(){
-    if(isset($_POST['Password'])){
+function checkLogin()
+{
+    if (isset($_POST['Password'])) {
         $Input = $_POST['Password'];
 
-        if ($Input === "1234"){
+        if ($Input === "1234") {
             return true;
-        }
-        else {
-            return false;
+        } else {
+            if ($Input === "") {
+                return false;
+            }
+            else {
+                $_SESSION['TF'] = 1;
+                return false;
+            }
         }
     }
 }

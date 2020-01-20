@@ -25,7 +25,7 @@ $titre = "Rent A Snow - Login";
 <br>
 <div>
     <p class="subtitle">Login</p><br>
-    <?=WrongPassword()?>
+    <?=wrongPassword()?>
 
     <form action="index.php?action=login" method="post">
         <label for="Username">Username</label>

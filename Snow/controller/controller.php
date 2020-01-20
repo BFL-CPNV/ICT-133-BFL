@@ -30,11 +30,10 @@ function login()
     if (checkLogin()) {
         if (isset($_POST['Username'])) {
             $_SESSION['User'] = $_POST['Username'];
-            $_SESSION['TF'] = 0;
             require "view/login.php";
+            $_SESSION['TF'] = 0;
         }
     } else {
-        $_SESSION['TF'] = 1;
         require "view/login.php";
     }
 }
@@ -45,6 +44,7 @@ function wrongPassword()
     if (isset($_SESSION['TF'])) {
         if ($_SESSION['TF'] == 1) {
             echo "<p class='error'>Le mot de passe est incorrect.</p>";
+            $_SESSION['TF'] = 0;
         }
     }
 }
