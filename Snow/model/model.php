@@ -36,19 +36,21 @@ function checkLogin()
 function welcomeUser()
 {
     if (isset($_POST['Username'])) {
-        if (date('G') >= 7 && date('G') < 14) {
+        $time = date("H");
+
+        if ($time >= 7 && $time < 14) {
             echo "Bonjour " . $_POST['Username'];
         }
 
-        if (date('G') >= 14 && date('G') < 19) {
+        if ($time >= 14 && $time < 19) {
             echo "Bon après-midi " . $_POST['Username'];
         }
 
-        if (date('G') >= 19 && date('G') < 23) {
+        if ($time >= 19 && $time < 23) {
             echo "Bonsoir " . $_POST['Username'];
         }
 
-        if (date('G') < 7 && date('G') >= 23) {
+        if ($time < 7 && $time >= 23) {
             echo "Bonne nuit " . $_POST['Username'];
         }
     } else {

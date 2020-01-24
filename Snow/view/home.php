@@ -94,7 +94,7 @@ $titre = "Rent A Snow - Accueil";
         /* Highlight the "current" day */
         .days li .active {
             padding: 5px;
-            background: #959c99;
+            background: #9d4302;
             color: white !important
         }
 
@@ -211,75 +211,144 @@ $titre = "Rent A Snow - Accueil";
             </div>
         </div>
 
-        <div class="month">
-            <ul>
-                <li class="prev"><a href="previous">&#10094;</a></li>
-                <li class="next"><a href="next">&#10095;</a></li>
-                <?php
-                $tblmois = array(
-                    "JANVIER", /*0*/
-                    "FÉVRIER", /*1*/
-                    "MARS", /*2*/
-                    "AVRIL", /*3*/
-                    "MAI", /*4*/
-                    "JUIN", /*5*/
-                    "JUILLET", /*6*/
-                    "AOÛT", /*7*/
-                    "SEPTEMBRE", /*8*/
-                    "OCTOBRE", /*9*/
-                    "NOVEMBRE", /*10*/
-                    "DÉCEMBRE" /*11*/
-                ); /*Array has months in french*/
+        <!-- Insert Calender Start -->
+        <?php
+        /**
+         * Inserted Calender code from ICT-133_PHP_Arrays_Strings
+         *
+         * Initial version by: Bastien.Fardel
+         * Initial version created on: 02.12.2019 13:44
+         * Current version: 3.0
+         * Description: Affiche un calendrier
+         **/
+        $tblmois = array(
+            "JANVIER", /*0*/
+            "FÉVRIER", /*1*/
+            "MARS", /*2*/
+            "AVRIL", /*3*/
+            "MAI", /*4*/
+            "JUIN", /*5*/
+            "JUILLET", /*6*/
+            "AOÛT", /*7*/
+            "SEPTEMBRE", /*8*/
+            "OCTOBRE", /*9*/
+            "NOVEMBRE", /*10*/
+            "DÉCEMBRE" /*11*/
+        ); /*Array has months in french*/
+        $currentMonth = date("n");
+        $currentYear = date("Y");
+        $tbljours = array(
+            "Lundi" => 'Lun',
+            "Mardi" => 'Mar',
+            "Mercredi" => 'Mer',
+            "Jeudi" => 'Jeu',
+            "Vendredi" => 'Ven',
+            "Samedi" => 'Sam',
+            "Dimanche" => 'Dim'
 
+        ); /*array has days names affiliated by classes*/
 
-                function showCurrentMonth($tblmois)
-                {
-                    $mois_actuel = date("n") - 1; /*$mois_actuel represents the position in the array*/
+        /**
+         * Function creates page's header
+         * @param $tblmois
+         */
+        function showCurrentMonth($tblmois, $currentMonth, $currentYear)
+        {
+            $monthDisplay = $currentMonth - 1; /*$monthDisplay represents the position in the array*/
 
-                    echo "<li>" . $tblmois[$mois_actuel] . "<br><span style='font-size:18px'>" . date("Y") . "</span></li>"; /*Echo the current month and the current year*/
-                }
+            echo "<li>" . $tblmois[$monthDisplay] . "<br><span style='font-size:18px'>" . $currentYear . "</span></li>"; /*Echo the current month and the current year*/
 
-                showCurrentMonth($tblmois);
-                ?>
-            </ul>
-        </div> <!-- display month and associated year -->
+            echo '</ul>';
+        } /*display month and associated year*/
 
-        <ul class="weekdays">
-            <?php
-            $tbljours = array(
-                "Lundi" => 'Lun',
-                "Mardi" => 'Mar',
-                "Mercredi" => 'Mer',
-                "Jeudi" => 'Jeu',
-                "Vendredi" => 'Ven',
-                "Samedi" => 'Sam',
-                "Dimanche" => 'Dim'
-
-            ); /*array has days names affiliated by classes*/
-
-            $nbdays = date("t"); /*number of days in the month*/
+        /**
+         * Function creates page's content
+         * @param $tbljours
+         * @param $currentMonth
+         * @param $currentYear
+         */
+        function createcontent($tbljours, $currentMonth, $currentYear)
+        {
+            echo '<ul class="weekdays">';
 
             foreach ($tbljours as $element) {
                 echo "<li>";
                 echo $element;
                 echo "</li>";
-            }
-            ?>
-        </ul> <!-- display the weekdays from an array -->
+            } /*display the weekdays from an array*/
 
-        <ul class="days">
-            <?php
-            for ($days = 1; $days <= $nbdays; $days++) {
-                if ($days == date("j")) {
-                    echo "<li><span class='active'>" . $days . "</span></li>";
-                } /*if $days is equal to the current day from the date function, mark number as active*/
-                else {
-                    echo "<li>" . $days . "</li>";
-                } /*if $days not equal to the current day from function date then simply display the number without marking it*/
-            }
-            ?>
-        </ul> <!-- display the days numbers as well as marking the current day -->
+            echo '</ul>';
 
+            echo '<ul class="days">';
+
+            $day = date("j", mktime(0, 0, 0, $currentMonth, 1, $currentYear));
+            $month = date("D", mktime(0, 0, 0, $currentMonth, $day, $currentYear));
+            $delay = 1;
+
+            $i = 0;
+            switch ($month) {
+                case "Mon":
+                    $delay = 1;
+                    break;
+                case "Tue":
+                    $delay = 2;
+                    break;
+                case "Wed":
+                    $delay = 3;
+                    break;
+                case "Thu":
+                    $delay = 4;
+                    break;
+                case "Fri":
+                    $delay = 5;
+                    break;
+                case "Sat":
+                    $delay = 6;
+                    break;
+                case "Sun":
+                    $delay = 7;
+                    break;
+            }
+
+            for ($k = 1; $k < $delay; $k++) {
+                echo '<li><p></p></li>';
+            }
+            while ($i <= 4) {
+                for ($j = 1; $j < 8; $j++) {
+
+                    if ($day == date("j") && $currentMonth == date("n")) {
+
+                        echo '<li class="active"><p class="active">';
+
+                        echo date("j", mktime(0, 0, 0, $currentMonth, $day, $currentYear));
+                        $day++;
+
+                        echo '</p></li>';
+                    } elseif (date("n", mktime(0, 0, 0, $currentMonth, $day, $currentYear)) == $currentMonth) {
+
+                        echo '<li><p>';
+
+                        echo date("j", mktime(0, 0, 0, $currentMonth, $day, $currentYear));
+                        $day++;
+
+                        echo '</p></li>';
+                    }
+                }
+                $i++;
+            }
+
+        }  /*display days's name and days's number*/
+
+        echo '<div class="month">';
+        echo '<ul>';
+        echo '<li class="prev"><a href="previous">&#10094;</a></li>';
+        echo '<li class="next"><a href="next">&#10095;</a></li>';
+
+        showCurrentMonth($tblmois, $currentMonth, $currentYear);
+        echo '</div>';
+        createcontent($tbljours, $currentMonth, $currentYear);
+        ?>
+        <!-- Insert calender end -->
     </div>
 <?php
 $content = ob_get_clean();

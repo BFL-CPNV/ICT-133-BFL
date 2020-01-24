@@ -28,10 +28,9 @@ function login()
 {
     if (checkLogin()) {
         if (isset($_POST['Username'])) {
-            $_GET['action'] = "home";
             $_SESSION['User'] = $_POST['Username'];
-            require "view/home.php";
             $_SESSION['TF'] = 0;
+            require "view/home.php";
         }
     } else {
         $_GET['action'] = "login";
@@ -42,7 +41,8 @@ function login()
 /**
  * Function to redirect the user to the products page
  */
-function products(){
+function products()
+{
     $_GET['action'] = "products";
     require "view/products.php";
 }

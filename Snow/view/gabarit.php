@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Rent A Snow - Accueil</title>
+    <title><?= $titre; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Html5TemplatesDreamweaver.com">
@@ -54,9 +54,6 @@
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
 
     <link href="view/content/styles/custom.css" rel="stylesheet" type="text/css"/>
-    <style>
-
-    </style>
 </head>
 <body id="pageBody">
 

@@ -32,7 +32,7 @@ $titre = "Rent A Snow - Login";
     <p class="subtitle">Login</p><br>
     <?=wrongPassword()?>
 
-    <form action="index.php?action=login" method="post">
+    <form action="index.php?action=home" method="post">
         <label for="Username">Username</label>
         <input type="text" placeholder="Enter Username" value="" name="Username">
         <label for="Password">Password</label>
